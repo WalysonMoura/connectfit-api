@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@prisma/client": "5.2.0",
+    "fastify": "4.22.2",
+    "zod": "3.22.2"
+  },
+  "name": "connectfit-api",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "10.4.0",
+    "@rocketseat/eslint-config": "2.1.0",
+    "@types/node": "20.5.9",
+    "eslint": "8.48.0",
+    "prisma": "5.2.0",
+    "prisma-erd-generator": "1.11.1",
+    "tsup": "7.2.0",
+    "tsx": "3.12.8",
+    "typescript": "5.2.2"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start:build": "node buid/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

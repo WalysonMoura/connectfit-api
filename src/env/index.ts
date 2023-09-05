@@ -7,9 +7,9 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(333),
 });
 
-const _env = envSchema.safeParce(process.env);
+const _env = envSchema.safeParse(process.env);
 
-if (_env.sucess === false) {
+if (_env.success === false) {
   console.error("❌ Invalid environment variables", _env.error.format());
   throw new Error("Invalid environment variables.");
 }
