@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+ generator erd {
+    provider = "prisma-erd-generator"
+ }
+ 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
+model User {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          Role     @default(MEMBER)
+  created_at    DateTime @default(now())
+
+  checkIns ChechIn[]
+
+  @@map("users")
+}
+
+model ChechIn {
+  id           String    @id @default(uuid())
+  created_at   DateTime  @default(now())
+  validated_at DateTime?
+
+  User         User?     @relation(fields: [user_id], references: [id])
+  user_id       String?
+
+  Gym          Gym?      @relation(fields: [gym_id], references: [id])
+  gym_id        String?
+
+  @@map("chech_ins")
+}
+
+model Gym {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  phone       String
+  latitude    String
+  longitude   String
+
+  checkIns ChechIn[]
+
+  @@map("gyms")
+}
