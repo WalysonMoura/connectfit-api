@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@prisma/client": "5.3.0",
+    "bcryptjs": "2.4.3",
     "dotenv": "16.3.1",
     "fastify": "4.22.2",
     "zod": "3.22.2"
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "10.4.0",
     "@rocketseat/eslint-config": "2.1.0",
+    "@types/bcryptjs": "2.4.4",
     "@types/node": "20.5.9",
     "eslint": "8.48.0",
     "prisma": "5.3.0",
