@@ -24,7 +24,7 @@ model User {
   name          String
   email         String   @unique
   password_hash String
-  role          Role     @default(MEMBER)
+ // role          Role     @default(MEMBER)
   created_at    DateTime @default(now())
 
   checkIns ChechIn[]
