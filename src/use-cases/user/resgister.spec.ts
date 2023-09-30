@@ -23,18 +23,22 @@ describe("Register User Case", () => {
     await expect(user.id).toEqual(expect.any(String));
   });
 
-  it('should hash user password upon registration', async() => {
+  it("should hash user password upon registration", async () => {
     const { user } = await sut.execute({
       name: "John Doe",
       email: "johndoe@gmail.com",
       password: "12345",
     });
 
-    const isPasswordCorrectlyHashed = await compare("12345", user.password_hash);
-
+    const isPasswordCorrectlyHashed = await compare(
+      "12345",
+      user.password_hash
+    );
 
     expect(isPasswordCorrectlyHashed).toBe(true);
   });
+
+ 
 
   it("should not be able to register with same email twice", async () => {
     const email = "johndoe@gmail.com";
@@ -42,14 +46,14 @@ describe("Register User Case", () => {
     await sut.execute({
       name: "John Doe",
       email,
-      password: "12345",
+      password: "123",
     });
 
     await expect(async () => {
       await sut.execute({
         name: "John Doe",
         email,
-        password: "12345",
+        password: "123",
       });
     }).rejects.toBeInstanceOf(UserAlreadyExistsError);
   });
