@@ -13,8 +13,8 @@ export class InMemoryUsersRepository implements UsersRepository {
       password_hash: data.password_hash,
       created_at: new Date(),
     };
-    
-   await this.users.push(user);
+
+    this.users.push(user);
 
     return user;
   }
