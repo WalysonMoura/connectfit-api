@@ -9,5 +9,5 @@ export interface GymsRepository {
   create(data: Prisma.GymCreateInput): Promise<Gym>;
   findById(id: string): Promise<Gym | null>;
   findManyNearby(id: string): Promise<Gym[]>;
-  searchMany(query: string, page: number): Promise<Gym[]>;
+  searchMany(query: string, page: number): Promise<Gym>;
 }
