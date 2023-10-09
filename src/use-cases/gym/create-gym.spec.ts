@@ -16,10 +16,10 @@ describe("Create Gym Use Case", () => {
   it("should to create use case", async () => {
     const { gym } = await sut.execute({
       title: "JavaScripr Gym",
-      description: null,
-      phone: null,
-      latitude: "-27.2092052",
-      longitude: "-49.6401091",
+      description:"",
+      phone: "123",
+      latitude: -27.2092052,
+      longitude: -49.6401091,
     });
 
     expect(gym.id).toEqual(expect.any(String));
