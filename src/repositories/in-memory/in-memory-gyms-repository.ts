@@ -7,7 +7,7 @@ export class InMemoryGymsRepository implements GymsRepository {
   public gyms: Gym[] = [];
 
   async create(data: Prisma.GymCreateInput) {
-    const gym: Gym = {
+    const gym = {
       id: data.id ?? randomUUID(),
       title: data.title,
       description: data.description ?? null,
@@ -17,7 +17,7 @@ export class InMemoryGymsRepository implements GymsRepository {
       created_at: new Date(),
     };
 
-    this.gyms.push(gym);
+   await this.gyms.push(gym);
 
     return gym;
   }
@@ -36,7 +36,7 @@ export class InMemoryGymsRepository implements GymsRepository {
 
   async findManyNearby(params: FindManyNearbyParams) {
     return await this.gyms.filter((gym) => {
-      const distance =  getDistanceBetweenCoordinates(
+      const distance = getDistanceBetweenCoordinates(
         {
           latitude: params.latitude,
           longitude: params.longitude,
