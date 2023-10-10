@@ -28,6 +28,37 @@ describe("Authenticate Use Case", () => {
         email: createUser.email,
         password: createUser.email,
       });
-    })
+    });
+  });
+
+  it("should be able to authenticate ", async () => {
+    const createUser = await usersRepository.create({
+      name: "John",
+      email: "johndoe@example.com",
+      password_hash: await hash("12345", 6),
+    });
+
+    await expect(createUser.id).toEqual(expect.any(String));
+  });
+
+  it("should not be able to authenticate with wrong email ", async () => {
+    await expect(async () => {
+      await sut.execute({
+        email: "johndoe@example.com",
+        password: "12345678",
+      });
+    }).rejects.toBeInstanceOf(invalidCredentialsError);
+  });
+
+  it("", async () => {
+    const createUser = await usersRepository.create({
+      name: "John Doe",
+      email: "johndoe@example.com",
+      password_hash: await hash("12345678", 6),
+    });
+
+    await expect( () => {
+      sut.execute({ email: createUser.email, password: "123123" });
+    }).rejects.toBeInstanceOf(invalidCredentialsError);
   });
 });

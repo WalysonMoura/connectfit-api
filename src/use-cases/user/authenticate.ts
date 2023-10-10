@@ -24,6 +24,8 @@ export class AuthenticateUseCase {
       throw new invalidCredentialsError();
     }
 
+
+    
     return {
       user,
     };
