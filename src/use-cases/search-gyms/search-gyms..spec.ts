@@ -16,8 +16,8 @@ describe("", () => {
       title: "JavaScript Gym",
       description: "",
       phone: "85921212121",
-      latitude: "-27.2092052",
-      longitude: "-49.6401091",
+      latitude: -27.2092052,
+      longitude: -49.6401091,
     });
 
     const { gyms } = await sut.execute({
