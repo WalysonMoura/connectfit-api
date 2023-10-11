@@ -27,12 +27,12 @@ model User {
  // role          Role     @default(MEMBER)
   created_at    DateTime @default(now())
 
-  checkIns ChechIn[]
+  checkIns CheckIn[]
 
   @@map("users")
 }
 
-model ChechIn {
+model CheckIn {
   id           String    @id @default(uuid())
   created_at   DateTime  @default(now())
   validated_at DateTime?
@@ -54,7 +54,7 @@ model Gym {
   latitude    String
   longitude   String
 
-  checkIns ChechIn[]
+  checkIns CheckIn[]
 
   @@map("gyms")
 }
