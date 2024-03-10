@@ -1,13 +1,17 @@
-import { beforeEach, describe } from "vitest";
-import { InMemoryUserRepositories } from "../../repositories/in-memory/in-memory-users-repositories";
+import { expect, describe, it, beforeEach } from "vitest";
 import { RegisterUseCase } from "./register";
+import { InMemoryUsersRepositories } from "@/repositories/in-memory/in-memory-users-repository";
 
-let userRepository: InMemoryUserRepositories;
+let usersRepository;
 let sut: RegisterUseCase;
 
 describe("Register Use Case", () => {
   beforeEach(() => {
-    userRepository = new InMemoryUserRepositories();
-    sut = new RegisterUseCase(userRepository);
+    usersRepository = new InMemoryUsersRepositories();
+    sut = new RegisterUseCase(usersRepository);
+  });
+
+  it("", async () => {
+    const {} = sut.execute({});
   });
 });
