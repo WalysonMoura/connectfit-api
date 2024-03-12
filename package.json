@@ -7,11 +7,10 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    
-    "dev":"tsx watch src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
-    "test": "",
-    "build":"tsup src --out-dir build"
+    "test": "vitest --ui",
+    "build": "tsup src --out-dir build"
   },
   "dependencies": {
     "@fastify/cookie": "^9.3.1",
