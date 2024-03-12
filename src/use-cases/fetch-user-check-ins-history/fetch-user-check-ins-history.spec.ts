@@ -39,7 +39,6 @@ describe("", () => {
       });
     }
 
-  
     const { checkIns } = await sut.execute({
       userId: "user-01",
       page: 2,
