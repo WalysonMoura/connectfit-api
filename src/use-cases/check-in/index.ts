@@ -44,7 +44,7 @@ export class CheckInUseCase {
         throw new MaxDistanceError()
     }
 
-    const checkInOnSameDay = await this.checkInsRepository.
+    //const checkInOnSameDay = await this.checkInsRepository.
 
     const checkIn = await this.checkInsRepository.create({
       gym_id: gymId,

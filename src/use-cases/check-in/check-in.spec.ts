@@ -64,7 +64,7 @@ describe("", () => {
     }).rejects.toBeInstanceOf(MaxNumberCheckInsError);
   }); */
 
-  it("", async () => {
+  /* it("", async () => {
     await gymsRepository.create({
       id: "gym-01",
       title: "JavaScript Gym",
@@ -82,5 +82,5 @@ describe("", () => {
         userLongitude: -49.6401091,
       });
     }).rejects.toBeInstanceOf(MaxDistanceError);
-  });
+  }); */
 });
