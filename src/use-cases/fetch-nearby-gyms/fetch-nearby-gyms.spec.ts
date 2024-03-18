@@ -24,8 +24,8 @@ describe("", () => {
       title: "Far Gym",
       description: null,
       phone: null,
-      latitude: -27.2092052,
-      longitude: -49.6401091,
+      latitude: -27.0610928,
+      longitude: -49.5229501,
     });
 
     const { gyms } = await sut.execute({
@@ -33,7 +33,7 @@ describe("", () => {
       userLogitude: -49.6401091,
     });
 
-
-    
+    expect(gyms).toHaveLength(1);
+    expect(gyms).toEqual([expect.objectContaining({ title: "Near Gym" })]);
   });
 });

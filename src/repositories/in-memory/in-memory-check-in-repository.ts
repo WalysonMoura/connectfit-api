@@ -32,4 +32,5 @@ export class InMemoryCheckInsRepository implements CheckInRepository {
 
     return checkIn;
   }
+
 }
