@@ -1,10 +1,8 @@
 import { app } from "@/app";
+import { FastifyRequest, FastifyReply } from "fastify";
 
-app
-  .listen({
-    host: "0.0.0.0",
-    port: 3001,
-  })
-  .then(() => {
-    console.log("🚀 HTTP Server Running!");
-  });
+
+  export default async function handler(request: FastifyRequest, reply: FastifyReply) {
+    await app.ready()
+    app.server.emit('request', request, reply)
+  }
