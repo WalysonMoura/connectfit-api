@@ -10,7 +10,7 @@
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "test": "vitest run --dir src/use-cases",
-    "build": "tsup src --out-dir build",
+   
     "lint": "eslint src --ext  .ts --fix",
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
     "test:e2e": "vitest run --dir src/http",
