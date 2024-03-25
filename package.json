@@ -10,7 +10,6 @@
     "dev": "tsx watch src/server.ts",
     "start": "node api/index.js",
     "test": "vitest run --dir src/use-cases",
-   
     "lint": "eslint src --ext  .ts --fix",
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
     "test:e2e": "vitest run --dir src/http",
@@ -22,6 +21,7 @@
     "@fastify/cookie": "^9.3.1",
     "@fastify/jwt": "^8.0.0",
     "@prisma/client": "^5.11.0",
+    "@vercel/node": "^3.0.24",
     "bcryptjs": "^2.4.3",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
