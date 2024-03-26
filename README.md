@@ -9,6 +9,7 @@
  <h1>
 
   "build": "tsup src --out-dir api",
+  "vercel-build": "npx prisma migrate deploy",
 <h1 align="center">
   <div style="display: flex; flex-direction: row;">
     <img width="400" style="border-radius: 10px" height="auto" alt="Class-01" title="Class-01" src="./preview/preview.gif" />
