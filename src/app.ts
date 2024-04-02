@@ -12,7 +12,7 @@ export const app = fastify({
 });
 
 app.get("/", async (req, reply) => {
-  return reply.status(200).type("text/html").send("Hello World");
+  return reply.status(200).type("text/html").send("Hello World,");
 });
 
 app.register(fastifyJwt, {
@@ -28,8 +28,8 @@ app.register(fastifyJwt, {
 app.register(fastifyCookie);
 
 app.register(userRoutes);
-app.register(gymsRoutes);
-app.register(checkInsRoutes);
+//app.register(gymsRoutes);
+//app.register(checkInsRoutes);
 
 app.setErrorHandler((error, request, reply) => {
   if (error instanceof ZodError) {
