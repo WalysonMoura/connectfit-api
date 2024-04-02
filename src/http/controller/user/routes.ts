@@ -13,5 +13,5 @@ export async function userRoutes(app: FastifyInstance) {
   app.patch("token/refresh", refresh);
 
   // Authenticated
-  app.get("/me", { onRequest: [verifyTwt] }, profile);
+  app.get("/me", profile);
 }
