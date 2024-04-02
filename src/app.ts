@@ -27,7 +27,7 @@ app.register(fastifyJwt, {
 });
 app.register(fastifyCookie);
 
-app.register(userRoutes);
+//app.register(userRoutes);
 //app.register(gymsRoutes);
 //app.register(checkInsRoutes);
 
